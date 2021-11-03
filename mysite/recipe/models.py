@@ -8,6 +8,7 @@ class Recipe(models.Model):
 	Recipe_description = models.TextField()
 	Recipe_type = models.CharField(max_length=100)
 	Recipe_category = models.CharField(max_length=100)
+	img = models.ImageField()
 
 	class Meta:
 		db_table="recipes"
