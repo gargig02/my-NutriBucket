@@ -2,11 +2,11 @@
 {% block main %}
    
     {% for record in Recipe %}
-      {% if record.Recipe_id < 7 %}
+      {% if record.Recipe_id <7 %}
         <div id="thumbnails">
          <div class="gallery">
         <a target="_blank" href="img_5terre.jpg">
-          <img src="img_5terre.jpg" alt="Image not available" width="600" height="400">
+          <img src="{{ record.img.url }}" alt="Image not available" width="600" height="400">
         </a>
         <div class="desc">{{record.Recipe_name}}<br>
         </div>

@@ -8,7 +8,7 @@ class Recipe(models.Model):
 	Recipe_description = models.TextField()
 	Recipe_type = models.CharField(max_length=100)
 	Recipe_category = models.CharField(max_length=100)
-	img = models.ImageField()
+	img = models.ImageField(default='default.jpg', upload_to='recipe_imgs')
 
 	class Meta:
 		db_table="recipes"
@@ -28,7 +28,7 @@ class Recipe_prep_details(models.Model):
 
 
 class Nutri_content(models.Model):
-	Recipe = models.ForeignKey(Recipe, on_delete=models.CASCADE, primary_key=True)
+	Recipe = models.OneToOneField(Recipe, on_delete=models.CASCADE, primary_key=True)
 	calories_per_serving = models.CharField(max_length=100)
 	carbs = models.CharField(max_length=100)
 	proteins = models.CharField(max_length=100)
