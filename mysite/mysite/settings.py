@@ -33,6 +33,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'recipe.apps.RecipeConfig',
+    'users.apps.UsersConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -80,7 +81,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'Recipe_site',
         'USER': 'root',
-        'PASSWORD': 'Gauri@2002',
+        'PASSWORD': 'MySQL_ITW2',
         'HOST': '127.0.0.1',
         'PORT': '3306',
         'OPTIONS': {
