@@ -9,7 +9,7 @@ usr_pswd varchar(255) not null,
 usr_level varchar(255) not null,
 primary key (usr_id)
 );
-select * from users;
+select * from Users;
 
 
 create table Recipes
@@ -25,7 +25,7 @@ create table upload_details
 ( usr_id varchar(255),
 usr_name varchar(255),
 date_uploaded datetime,
-foreign key (usr_id) references users (usr_id)
+foreign key (usr_id) references Users (usr_id)
 );
 
 alter table upload_details
@@ -37,7 +37,7 @@ create table user_details
 ( usr_id varchar(255),
 height_cm int,
 weight_kg int,
-foreign key (usr_id) references users (usr_id)
+foreign key (usr_id) references Users (usr_id)
 );
 select * from user_details;
 
@@ -48,13 +48,13 @@ preparation_time time,
 num_of_servings int,
 ingredients varchar(2000),
 instructions varchar(2000),
-foreign key (recipe_id) references recipes(recipe_id)
+foreign key (recipe_id) references Recipes(recipe_id)
 );
 
 alter table recipe_prep_details
 add recipe_id int;
 alter table recipe_prep_details
-add constraint foreign key (recipe_id) references recipes (recipe_id);
+add constraint foreign key (recipe_id) references Recipes (recipe_id);
  
 select * from recipe_prep_details;
 
@@ -70,12 +70,14 @@ cholestrol decimal
 alter table nutri_content
 add column recipe_id int;
 alter table nutri_content
-add foreign key (recipe_id) references recipes (recipe_id);
+add foreign key (recipe_id) references Recipes (recipe_id);
 
 select * from nutri_content;
 
 show tables;
 select * from Recipes;
+alter table Recipes rename to recipes;
+alter table Users rename to users;
 
 select * from recipe_prep_details;
 
@@ -179,7 +181,7 @@ insert into upload_details values(
 
 delete from users
 where usr_id = '03';
-
+select * from users;
 
 
 /* 2 */
