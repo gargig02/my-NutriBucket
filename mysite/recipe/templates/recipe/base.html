@@ -7,7 +7,7 @@
 	<link rel="stylesheet" href="{% static 'css/homestyles.css' %}">
   <link rel="stylesheet" href="{% static 'css/aboutstyles.css' %}">
   <link rel="stylesheet" href="{% static 'css/contactstyles.css' %}">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia|Audiowide">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia|Audiowide|Pacifico">
 </head>
 <body>
 	<header>
@@ -27,8 +27,8 @@
 
     
   <div id="top-text">
-    <h1 id="title">NutriBucket</h1>
-    <p id="subtitle">A Recipe Portal for a healthy you</p>
+    <h1 id="title"><em><strong>NutriBucket</strong></em></h1>
+    <p id="subtitle"><em>A Recipe Portal for a healthy you</em></p>
     </div>
 
 
@@ -76,13 +76,8 @@
 
 	<footer>
 
-    <div id="img">
-      <img src="{% static 'img/base_imgs/chef1.jpeg' %}" id="img1">
-      <img src="{% static 'img/base_imgs/chef2.jpeg' %}" id="img2">
-      <img src="{% static 'img/base_imgs/chef3.jpeg' %}" id="img3">
-    </div>
-
-      
+      <a href="{% url 'recipe-contact' %}"><button id="button" type="button">Contact us here!!</button></a>
   </footer>
+
 </body>
 </html>

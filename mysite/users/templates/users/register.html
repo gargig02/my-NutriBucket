@@ -1,0 +1,12 @@
+{% extends "recipe/base.html" %}
+{% block main %}
+  <form>
+  	{% csrf_token%}
+  	<fieldset>
+  		<legend> Wecome To NutriBucket </legend>
+  		{{form}}
+  	</fieldset>
+  	<button id="button" type="button">Sign Up</button>
+  	<small>Already have an account?<a href="#">Log in</a></small>
+
+{% endblock main %}

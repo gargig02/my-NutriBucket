@@ -34,18 +34,3 @@
 	width: 90%;
 }
 
-#img1, #img2, #img3 {
-	height: 200px;
-	width: 350px;
-	border-radius: 10px;
-}
-
-#img1, #img2 {
-	padding-right: 50px;
-}
-
-#img {
-	padding-top: 200px;
-	padding-left: 10px;
-	padding-right: 10px;
-}
