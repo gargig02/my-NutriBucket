@@ -1,0 +1,16 @@
+{% extends 'recipe/base.html' %}
+{% block main %}
+	<h1>{{cat_name}}</h1>
+	{% for record in Recipe %}
+    {% if cat_name in record.Recipe_category  %}
+      <div class="gallery">
+        <a target="_blank" href="img_5terre.jpg">
+          <img src="{{ record.img.url }}" alt="Image not available">
+        </a>
+        <div class="desc">{{record.Recipe_name}}<br></div>
+      </div>
+    {% endif %}
+  {% endfor %}
+	
+
+{% endblock main %}

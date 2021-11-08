@@ -3,6 +3,7 @@
 	background-color: white;
 	margin-top: 10px;
 	font-family: comic sans ms, comic sans, cursive;
+	border-radius: 8px;
 }
 
 #button{
@@ -33,7 +34,7 @@
 }
 
 input{
-	width: 100%;
+	width: 50%;
 	border-radius: 5px;
 }
 
@@ -42,7 +43,7 @@ label{
 	font-size: 18px;
 }
 
-[id^="error"] {
+[id^="error"], [class^="alert"] {
 	color: red;
 	font-size: 14px;
 	font-weight: normal;

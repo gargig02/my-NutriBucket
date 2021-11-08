@@ -1,0 +1,12 @@
+{% extends "recipe/base.html" %}
+{% block main %}
+
+<div class="prof-box">
+	<img src="{{ user.profile.pic.url }}" id="profile-pic">
+	<div class="user-prof-info">
+		<h1>{{ user.username }}</h1>
+		<p>{{ user.email }}</p>
+	</div>
+
+
+{% endblock main %}

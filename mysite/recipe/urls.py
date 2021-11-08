@@ -21,5 +21,6 @@ urlpatterns = [
     path('', views.home, name='recipe-home'),
     path('contact/', views.contact, name='recipe-contact'),
     path('about/', views.about, name='recipe-about'),
+    path('category/<cat_name>/', views.category, name='recipe-category'),
 
 ]

@@ -1,0 +1,30 @@
+#profile-pic{
+	height: 150px;
+	width: 150px;
+	border-radius: 50%;
+	float: left;
+	margin-right: 10px;
+}
+
+.prof-box{
+	margin-top: 50px;
+	margin-right: 25%;
+	margin-left: 25%;
+	padding: 10px;
+	background-color: white;
+	height: 150px;
+
+}
+
+.prof-box h1,p{
+	margin-top: 0px;
+}
+
+.prof-box h1{
+	font-size: 36px;
+}
+
+.user-prof-info {
+	float: left;
+	width: 70%;
+}
