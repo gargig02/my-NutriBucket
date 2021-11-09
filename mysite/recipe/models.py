@@ -9,6 +9,7 @@ class Recipe(models.Model):
 	Recipe_type = models.CharField(max_length=100)
 	Recipe_category = models.CharField(max_length=100)
 	img = models.ImageField(default='default.jpg', upload_to='recipe_imgs')
+	user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
 
 	class Meta:
 		db_table="recipes"
@@ -24,7 +25,7 @@ class Recipe_prep_details(models.Model):
 		db_table="recipe_prep_details"
 
 	def __str__(self):
-		return str(self.Recipe.Recipe_name)
+		return str(self.Recipe_id)
 
 
 class Nutri_content(models.Model):
