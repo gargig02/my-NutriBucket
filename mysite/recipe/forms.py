@@ -1,5 +1,5 @@
 from django import forms
-from .models import Recipe, Nutri_content, Recipe_prep_details
+from .models import Recipe, Nutri_content, Recipe_prep_details, feedback
 
 class Form1(forms.ModelForm):
 	class Meta:
@@ -15,3 +15,8 @@ class Form3(forms.ModelForm):
 	class Meta:
 		model = Nutri_content
 		fields = ['calories_per_serving', 'carbs', 'proteins', 'saturated_fats', 'trans_fats', 'cholestrol']
+
+class feedback_form(forms.ModelForm):
+	class Meta:
+		model = feedback
+		fields = '__all__'

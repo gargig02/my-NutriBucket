@@ -4,7 +4,7 @@
 	{% for record in Recipe %}
     {% if cat_name in record.Recipe_category  %}
       <div class="gallery">
-        <a target="_blank" href="#"><!--{% url 'single-recipe' record.Recipe_id %}-->
+        <a target="_blank" href="#">
           <img src="{{ record.img.url }}" alt="Image not available">
         </a>
         <div class="desc">{{record.Recipe_name}}<br></div>

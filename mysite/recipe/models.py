@@ -42,3 +42,12 @@ class Nutri_content(models.Model):
 
 	def __str__(self):
 		return str(self.Recipe_id)
+
+
+class feedback(models.Model):
+	Full_name = models.CharField(max_length=100, null=True, blank=True)
+	Email = models.CharField(max_length=100)
+	Message = models.TextField()
+
+	def __str__(self):
+		return f'{self.Full_name}'

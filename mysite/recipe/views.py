@@ -1,22 +1,28 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-from recipe.models import Recipe, Recipe_prep_details, Nutri_content
-from django.views.generic import DetailView, DeleteView
+from recipe.models import Recipe, Recipe_prep_details, Nutri_content, feedback
+from django.views.generic import ListView, DetailView, DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
-from .forms import Form1, Form2, Form3
+from .forms import Form1, Form2, Form3, feedback_form
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 
 # Create your views here.
-def home(request):
-	var = {
-	'Recipe': Recipe.objects.all(),
-	'title': 'Home'
-	}
-	return render(request,'recipe/home.html', var)
+class RecipeListView(ListView):
+	model = Recipe
+	template_name = 'recipe/home.html'
+	context_object_name = 'Recipe'
+	paginate_by = 2
 
 def contact(request):
-	return render(request,'recipe/contact.html', {'title' : 'Contact'})
+	if request.method == 'POST':
+		form = feedback_form(request.POST)
+		form.save()
+		messages.success(request, f'Your message has been sent!')
+		return redirect('recipe-contact')
+	else:
+		form = feedback_form()
+	return render(request,'recipe/contact.html', {'title' : 'Contact', 'form':form})
 
 def about(request):
 	return render(request,'recipe/about.html', {'title' : 'About'})
