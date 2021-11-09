@@ -9,8 +9,7 @@
 	<link rel="stylesheet" href="{% static 'recipe/css/homestyles.css' %}">
   <link rel="stylesheet" href="{% static 'recipe/css/aboutstyles.css' %}">
   <link rel="stylesheet" href="{% static 'recipe/css/contactstyles.css' %}">
-  <link rel="stylesheet" href="{% static 'users/css/regstyles.css' %}">
-  <link rel="stylesheet" href="{% static 'users/css/profstyles.css' %}">
+  <link rel="stylesheet" href="{% static 'users/css/styles.css' %}">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia|Audiowide|Pacifico|Comic Sans MS|Roboto">
 
 
@@ -28,10 +27,11 @@
 
 		<div id="log">
     <ul>
-      {% if user.is_authenticated%}
+      {% if user.is_authenticated %}
         <li>
-    <a href="{% url 'logout' %}">Logout</a>
+    <a href="{% url 'recipe-create' %}">Upload Recipe</a>
     <a href="{% url 'profile' %}">Profile</a>
+    <a href="{% url 'logout' %}">Logout</a>
       </li>
 
       {% else %}

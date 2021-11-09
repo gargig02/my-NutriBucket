@@ -4,7 +4,7 @@ from .models import Recipe, Nutri_content, Recipe_prep_details
 class Form1(forms.ModelForm):
 	class Meta:
 		model = Recipe
-		fields = ['Recipe_name', 'Recipe_category', 'Recipe_type']
+		fields = ['Recipe_name', 'Recipe_description', 'Recipe_category', 'Recipe_type']
 
 class Form2(forms.ModelForm):
 	class Meta:

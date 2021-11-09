@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from . import views
-from .views import RecipeCreateView
+from .views import RecipeDeleteView
 
 urlpatterns = [
     path('', views.home, name='recipe-home'),
@@ -24,6 +24,8 @@ urlpatterns = [
     path('about/', views.about, name='recipe-about'),
     path('category/<cat_name>/', views.category, name='recipe-category'),
     path('recipe/new/', views.RecipeCreateView, name='recipe-create'),
+    path('recipe/<pk>/update/', views.RecipeUpdateView, name='recipe-update'),
+    path('recipe/<pk>/delete/', RecipeDeleteView.as_view(), name='recipe-delete'),
 
 ]
 #path('recipe/<pk>/', RecipeDetailView.as_view(), name='single-recipe'),
