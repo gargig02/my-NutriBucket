@@ -1,6 +1,6 @@
 #reg_form{
 	width: 50%;
-	background-color: white;
+	/*background-color: white;*/
 	margin-top: 10px;
 	font-family: comic sans ms, comic sans, cursive;
 	border: none;
@@ -13,6 +13,7 @@
 	display: inline;
 	border-color: blue;
 	color: blue;
+	border-top: 1px solid black;
 }
 
 #button:hover{
@@ -71,7 +72,7 @@ label{
 	margin-right: 25%;
 	margin-left: 25%;
 	padding: 10px;
-	background-color: white;
+	/*background-color: white;*/
 	height: 150px;
 
 }
@@ -94,7 +95,7 @@ label{
 	width: 50%;
 	margin-right: 25%;
 	margin-left: 25%;
-	background-color: white;
+	/*background-color: white;*/
 	margin-top: 10px;
 	font-family: comic sans ms, comic sans, cursive;
 	border-radius: 8px;
