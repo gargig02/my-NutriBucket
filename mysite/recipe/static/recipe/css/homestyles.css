@@ -183,3 +183,16 @@ footer{
   background-color: red;
   color: white;
 }
+
+#category_heading{
+  width: 50%;
+  margin: auto;
+  font-family: Sofia, sans-serif;
+  text-align: center;
+  font-size: 45px;
+
+}
+
+.heading{
+  font-family: Sofia, sans-serif;
+}

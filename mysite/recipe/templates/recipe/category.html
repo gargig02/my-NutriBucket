@@ -1,6 +1,6 @@
 {% extends 'recipe/base.html' %}
 {% block main %}
-	<h1>{{cat_name}}</h1>
+	<h1 id="category_heading"><em><u>{{cat_name}}</u></em></h1>
 	{% for record in Recipe %}
     {% if cat_name in record.Recipe_category  %}
       <div class="gallery">

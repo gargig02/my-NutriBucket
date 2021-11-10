@@ -12,7 +12,6 @@ class RecipeListView(ListView):
 	model = Recipe
 	template_name = 'recipe/home.html'
 	context_object_name = 'Recipe'
-	paginate_by = 2
 
 def contact(request):
 	if request.method == 'POST':
