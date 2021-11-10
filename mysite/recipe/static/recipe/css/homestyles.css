@@ -168,3 +168,16 @@ footer{
   margin-left: 45%;
   margin-right: 45%;
 }
+
+#delete_button{
+  width: 15% ;
+  font-weight: bold;
+  display: inline;
+  border-color: red;
+  color: red;
+}
+
+#delete_button:hover{
+  background-color: red;
+  color: white;
+}

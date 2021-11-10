@@ -9,13 +9,15 @@
 
 #button{
 	width:20% ;
-	margin-left: 40%;
-	margin-right: 40%;
 	font-weight: bold;
+	display: inline;
+	border-color: blue;
+	color: blue;
 }
 
 #button:hover{
 	background-color: blue;
+	color: white;
 }
 
 #reg_form ul{
@@ -117,4 +119,9 @@ label{
 	padding: 0px;
 	margin: 0px;
 
+}
+
+#reset_pass{
+	display: inline;
+	float: right;
 }
