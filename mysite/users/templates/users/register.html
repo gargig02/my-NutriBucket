@@ -9,13 +9,10 @@
   		{{ form|crispy }}
   	</fieldset>
     <div>
-  	 <button id="button" type="submit">Sign Up</button>
+  	 <button id="button" type="submit" style="display: inline;">Sign Up</button>
+     <small style="float: right; display: inline;"><br>Already have an account?<a href="{% url 'login' %}">Log in</a></small>
     </div>
   </form>
-
-  <div>
-  	<small><br>Already have an account?<a href="{% url 'login' %}">Log in</a></small>
-  </div>
 </div>
 
 {% endblock main %}

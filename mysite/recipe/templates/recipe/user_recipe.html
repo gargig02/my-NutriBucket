@@ -1,16 +1,16 @@
 {% extends "recipe/base.html" %}
 {% block main %}
+  <h1><em> Recipes by {{ view.kwargs.usr_name }} ({{ page_obj.paginator.count }})</em></h1>
   <div class="recipe-cards">
     {% for record in Recipe %}
-      
         <div class="gallery">
           <a target="_blank" href="#">
             <img src="{{ record.img.url }}">
           </a>
           <div class="desc">{{record.Recipe_name}}<br></div>
         </div>
-      
     {% endfor %}
+
   </div>
     <div class="paginate">
       {% if is_paginated %}
@@ -27,5 +27,3 @@
     </div>
 
 {% endblock main %}
-
-

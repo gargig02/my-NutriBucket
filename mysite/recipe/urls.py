@@ -16,10 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from . import views
-from .views import RecipeListView, RecipeDeleteView
+from .views import RecipeListView, RecipeDeleteView, UserRecipeListView
 
 urlpatterns = [
     path('', RecipeListView.as_view(), name='recipe-home'),
+    path('recipe/<str:usr_name>/', UserRecipeListView.as_view(), name='user-recipe'),
     path('contact/', views.contact, name='recipe-contact'),
     path('about/', views.about, name='recipe-about'),
     path('category/<cat_name>/', views.category, name='recipe-category'),

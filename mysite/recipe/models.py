@@ -8,7 +8,7 @@ class Recipe(models.Model):
 	Recipe_description = models.TextField()
 	Recipe_type = models.CharField(max_length=100)
 	Recipe_category = models.CharField(max_length=100)
-	img = models.ImageField(default='default.jpg', upload_to='recipe_imgs')
+	img = models.ImageField(default='recipe_default.jpg', upload_to='recipe_imgs')
 	user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
 
 	class Meta:

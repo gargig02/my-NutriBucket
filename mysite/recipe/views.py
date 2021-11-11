@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse
 from recipe.models import Recipe, Recipe_prep_details, Nutri_content, feedback
 from django.views.generic import ListView, DetailView, DeleteView
@@ -6,12 +6,24 @@ from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from .forms import Form1, Form2, Form3, feedback_form
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
+from django.contrib.auth.models import User
 
 # Create your views here.
 class RecipeListView(ListView):
 	model = Recipe
 	template_name = 'recipe/home.html'
 	context_object_name = 'Recipe'
+	paginate_by=8
+
+class UserRecipeListView(ListView):
+	model = Recipe
+	template_name = 'recipe/user_recipe.html'
+	context_object_name = 'Recipe'
+	paginate_by=8
+
+	def get_queryset(self):
+		usr = get_object_or_404(User, username=self.kwargs.get('usr_name'))
+		return Recipe.objects.filter(user=usr)
 
 def contact(request):
 	if request.method == 'POST':
