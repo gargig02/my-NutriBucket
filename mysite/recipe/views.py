@@ -25,6 +25,10 @@ class UserRecipeListView(ListView):
 		usr = get_object_or_404(User, username=self.kwargs.get('usr_name'))
 		return Recipe.objects.filter(user=usr)
 
+class RecipeDetailView(DetailView):
+	model = Recipe
+	template_name = 'recipe/single_recipe.html'
+
 def contact(request):
 	if request.method == 'POST':
 		form = feedback_form(request.POST)

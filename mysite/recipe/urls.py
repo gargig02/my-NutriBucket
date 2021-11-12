@@ -16,17 +16,18 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from . import views
-from .views import RecipeListView, RecipeDeleteView, UserRecipeListView
+from .views import RecipeListView, RecipeDeleteView, UserRecipeListView, RecipeDetailView
 
 urlpatterns = [
     path('', RecipeListView.as_view(), name='recipe-home'),
-    path('recipe/<str:usr_name>/', UserRecipeListView.as_view(), name='user-recipe'),
     path('contact/', views.contact, name='recipe-contact'),
     path('about/', views.about, name='recipe-about'),
+    path('recipe/<int:pk>', RecipeDetailView.as_view(), name='recipe-detail'),
     path('category/<cat_name>/', views.category, name='recipe-category'),
     path('recipe/new/', views.RecipeCreateView, name='recipe-create'),
     path('recipe/<pk>/update/', views.RecipeUpdateView, name='recipe-update'),
-    path('recipe/<pk>/delete/', RecipeDeleteView.as_view(), name='recipe-delete'),
+    path('recipe/<pk>/delete/', RecipeDeleteView.as_view(), name='recipe-delete'),    
+    path('recipe/<str:usr_name>/', UserRecipeListView.as_view(), name='user-recipe'),
 
 ]
 #path('recipe/<pk>/', RecipeDetailView.as_view(), name='single-recipe'),

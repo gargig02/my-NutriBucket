@@ -1,15 +1,23 @@
 from django.db import connections
 from django.db import models
 from django.contrib.auth.models import User
+from django.utils.translation import gettext_lazy as _
 
 class Recipe(models.Model):
+
+	class Type(models.TextChoices):
+	    VEG = 'V', _('Veg')
+	    NON_VEG = 'N', _('Non-Veg')
+	    EGG = 'E', _('Egg')
+	    VEGAN = 'R', _('Vegan')
+
 	Recipe_id = models.AutoField(primary_key=True)
 	Recipe_name = models.CharField(max_length=100)
 	Recipe_description = models.TextField()
-	Recipe_type = models.CharField(max_length=100)
+	Recipe_type = models.CharField(max_length=100, choices=Type.choices, default=Type.VEG)
 	Recipe_category = models.CharField(max_length=100)
 	img = models.ImageField(default='recipe_default.jpg', upload_to='recipe_imgs')
-	user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
+	user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
 
 	class Meta:
 		db_table="recipes"

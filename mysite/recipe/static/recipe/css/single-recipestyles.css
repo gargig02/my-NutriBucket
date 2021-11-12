@@ -1,0 +1,33 @@
+h1 {
+    color: black;
+    font-size: 3rem;
+    font-style:oblique;
+}
+
+h2 {
+    color: rgb(78, 35, 207);
+    font-size: 1.5rem;
+    font-style:initial;
+}
+
+h3 {
+    color: rgb(29, 235, 63);
+    font-size: 3rem;
+    font-style: normal;
+}
+div {  
+width: 50px;  
+text-align: center;  
+padding: 150px;  
+border: 30px solid red;  
+}  
+img {  
+max-width: 50%;  
+height: 10px;  
+}  
+span { font-size: 3em;}
+span b { font-size: 60%; font-weight: normal }
+
+pre{
+    white-space: pre-wrap;
+}
