@@ -98,7 +98,8 @@
                 <p>{{ object.recipe_prep_details.num_of_servings }}</p>
 
                 <p class="recipe-tags">
-              Tags : <a href="{% url 'recipe-category' cat_name=object.Recipe_category %}">{{object.Recipe_category}}</a>            </p>
+              Tags : <a href="{% url 'recipe-category' cat_name=object.Recipe_category %}">{{object.Recipe_category}}</a>
+              <a href="{% url 'recipe-type' typ_name=object.Recipe_type %}">{{object.Recipe_type}}  </a>            </p>
               </article>
             </div>
           </article>

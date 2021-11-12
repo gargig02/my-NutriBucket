@@ -50,8 +50,14 @@ def category(request, cat_name):
 	}
 	return render(request, 'recipe/category.html', var)
 
-#class RecipeDetailView(DetailedView):
-#	model = Recipe
+def type(request, typ_name):
+	var = {
+	'Recipe': Recipe.objects.all(),
+	'title': typ_name,
+	'typ_name': typ_name
+	}
+	return render(request, 'recipe/type.html', var)
+
 
 @login_required
 def RecipeCreateView(request):

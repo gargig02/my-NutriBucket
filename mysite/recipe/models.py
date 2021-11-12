@@ -6,10 +6,10 @@ from django.utils.translation import gettext_lazy as _
 class Recipe(models.Model):
 
 	class Type(models.TextChoices):
-	    VEG = 'V', _('Veg')
-	    NON_VEG = 'N', _('Non-Veg')
-	    EGG = 'E', _('Egg')
-	    VEGAN = 'R', _('Vegan')
+	    VEG = 'Veg', _('Veg')
+	    NON_VEG = 'Non-Veg', _('Non-Veg')
+	    EGG = 'Egg', _('Egg')
+	    VEGAN = 'Vegan', _('Vegan')
 
 	Recipe_id = models.AutoField(primary_key=True)
 	Recipe_name = models.CharField(max_length=100)
