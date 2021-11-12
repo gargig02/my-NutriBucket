@@ -154,7 +154,7 @@ div.desc {
 }
 
 .flash-msg{
-  color: ;
+  color: white;
 
 }
 
@@ -228,4 +228,8 @@ footer{
 
 .heading{
   font-family: Sofia, sans-serif;
+}
+
+.profile-buttons button{
+  float: left;
 }

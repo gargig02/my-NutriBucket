@@ -81,6 +81,45 @@ footer{
   font-weight: bold ;
 }
 
+#delete_button{
+  font-weight: bold;
+  display: inline;
+  border-color: red;
+  color: red;
+  font-size: 20px;
+  margin-right: 10px;
+  height: 30px;
+}
+
+#delete_button:hover{
+  background-color: red;
+  color: white;
+}
+
+#update_button{
+  font-weight: bold;
+  display: inline;
+  border-color: blue;
+  color: blue;
+  margin-bottom: 10px;
+  height: 30px;
+  font-size: 20px;
+}
+
+#update_button:hover{
+  background-color: blue;
+  color: white;
+}
+
+.recipe-changes a{
+  float: left;
+}
+
+div.recipe-changes{
+  height: 25px;
+  margin-bottom: 10px;
+}
+
 
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 
@@ -249,7 +288,7 @@ img {
  * 2. Remove the margin in Firefox and Safari.
  */
 
-button,
+
 input,
 optgroup,
 select,

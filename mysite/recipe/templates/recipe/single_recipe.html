@@ -125,7 +125,15 @@
           </article>
         </section>
       </div>
+
+      <div class='recipe-changes'>
+     <a href="{% url 'recipe-delete' object.Recipe_id %}"><button id="delete_button" type="submit">Delete Recipe</button></a>
+     <a href="{% url 'recipe-update' object.Recipe_id %}"><button id="update_button" type="submit">Update Recipe</button></a>
+    </div>
+
     </main>
+
+
     
     <footer>
 

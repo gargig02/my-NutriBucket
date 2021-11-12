@@ -74,7 +74,7 @@ def RecipeCreateView(request):
 			form3.save()
 			name = form1.cleaned_data.get('Recipe_name')
 			messages.success(request, f'Your recipe "{name}" has been uploaded!')
-			return redirect('recipe-home')
+			return redirect('recipe-detail', pk=form1.instance.Recipe_id)
 
 	else:
 		form1 = Form1()
