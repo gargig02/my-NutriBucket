@@ -1,24 +1,25 @@
 {% extends "recipe/base.html" %}
+{% load crispy_forms_tags %}
 {% block main %}
 
-  <div id="welcome-content">
-    <h1>We would love to hear from you.</h1>
+  <div class="content">
+    <h1 class="heading">We would love to hear from you.</h1>
     Drop in your ideas, suggestions and feedback in the message box to your right.
     You can also share your own recipes with us.
     Sign up on our website<br>
   </div>
 
-  
-  <form id="msgboxin">
-     <label for="name">Full Name:</label><br>
-     <input type="text" id="name" name="name"><br><br>
-     <label for="email">Email:</label><br>
-     <input type="text" id="email" name="email"><br><br>
-     <label for="msg">Message:</label><br>
-     <input type="text" id="msg" name="msg"><br><br>
-     <input type="submit" value="submit">
+  <form method="POST"  id="msgboxin">
+    {% csrf_token %}
+    <fieldset>
+      <legend> <h1>Message Box</h1></legend>
+      <div>{{ form|crispy }}</div>
+    </fieldset>
+    <div>
+     <button id="button" type="submit">Submit</button>
+    </div>
   </form>
-  <br>
+  
 
   
 

@@ -1,4 +1,13 @@
+form fieldset{
+	border-top: 1px solid black;
+	border-bottom: 1px solid black;
+	border-left: none;
+	border-right: none;
+}
 
+form legend{
+	text-decoration: underline;
+}
 	
 
 
@@ -11,13 +20,13 @@
 	position: relative;
 	right: 20px;
 	top: 20px;
-	width: 25%;
-	background-color: black;
-	color: white;
+	width: 35%;
+	/*background-color: black;*/
+	color: black;
 }
 
 
-#welcome-content {
+.content {
 	display: inline-block;
 	text-align: left;
 	width: 50%;

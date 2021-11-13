@@ -1,14 +1,23 @@
 from django.db import connections
 from django.db import models
 from django.contrib.auth.models import User
+from django.utils.translation import gettext_lazy as _
 
 class Recipe(models.Model):
+
+	class Type(models.TextChoices):
+	    VEG = 'Veg', _('Veg')
+	    NON_VEG = 'Non-Veg', _('Non-Veg')
+	    EGG = 'Egg', _('Egg')
+	    VEGAN = 'Vegan', _('Vegan')
+
 	Recipe_id = models.AutoField(primary_key=True)
 	Recipe_name = models.CharField(max_length=100)
 	Recipe_description = models.TextField()
-	Recipe_type = models.CharField(max_length=100)
+	Recipe_type = models.CharField(max_length=100, choices=Type.choices, default=Type.VEG)
 	Recipe_category = models.CharField(max_length=100)
-	img = models.ImageField(default='default.jpg', upload_to='recipe_imgs')
+	img = models.ImageField(default='recipe_default.jpg', upload_to='recipe_imgs')
+	user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
 
 	class Meta:
 		db_table="recipes"
@@ -24,7 +33,7 @@ class Recipe_prep_details(models.Model):
 		db_table="recipe_prep_details"
 
 	def __str__(self):
-		return str(self.Recipe.Recipe_name)
+		return str(self.Recipe_id)
 
 
 class Nutri_content(models.Model):
@@ -41,3 +50,12 @@ class Nutri_content(models.Model):
 
 	def __str__(self):
 		return str(self.Recipe_id)
+
+
+class feedback(models.Model):
+	Full_name = models.CharField(max_length=100, null=True, blank=True)
+	Email = models.CharField(max_length=100)
+	Message = models.TextField()
+
+	def __str__(self):
+		return f'{self.Full_name}'

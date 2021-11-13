@@ -1,18 +1,30 @@
 {% extends "recipe/base.html" %}
 {% block main %}
-   
+  <div class="recipe-cards">
     {% for record in Recipe %}
-      {% if record.Recipe_id < 5 %}
-  
-         <div class="gallery">
-        <a target="_blank" href="img_5terre.jpg">
-          <img src="{{ record.img.url }}" alt="Image not available">
-        </a>
-        <div class="desc">{{record.Recipe_name}}<br>
+      
+        <div class="gallery">
+          <a target="_blank" href="{% url 'recipe-detail' record.Recipe_id %}">
+            <img src="{{ record.img.url }}">
+          </a>
+          <div class="desc">{{record.Recipe_name}}<br></div>
         </div>
-        </div>
-      {% endif %}
+      
     {% endfor %}
+  </div>
+    <div class="paginate">
+      {% if is_paginated %}
+
+        {% if page_obj.has_previous %}
+          <a href="?page={{ page_obj.previous_page_number}}" id="left"><button id="paginate-button">Previous</button></a>
+        {% endif %}
+
+        {% if page_obj.has_next %}
+          <a href="?page={{ page_obj.next_page_number}}" id="right"><button id="paginate-button">Next</button></a>
+        {% endif %}
+
+      {% endif %}
+    </div>
 
 {% endblock main %}
 

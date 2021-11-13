@@ -9,17 +9,12 @@
 	<link rel="stylesheet" href="{% static 'recipe/css/homestyles.css' %}">
   <link rel="stylesheet" href="{% static 'recipe/css/aboutstyles.css' %}">
   <link rel="stylesheet" href="{% static 'recipe/css/contactstyles.css' %}">
-  <link rel="stylesheet" href="{% static 'users/css/regstyles.css' %}">
-  <link rel="stylesheet" href="{% static 'users/css/profstyles.css' %}">
+  <link rel="stylesheet" href="{% static 'users/css/styles.css' %}">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia|Audiowide|Pacifico|Comic Sans MS|Roboto">
 
 
   
- <!--- <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
-  --->
+ 
   
 </head>
 <body>
@@ -28,10 +23,12 @@
 
 		<div id="log">
     <ul>
-      {% if user.is_authenticated%}
+      {% if user.is_authenticated %}
         <li>
-    <a href="{% url 'logout' %}">Logout</a>
+    <a href="{% url 'user-recipe' user.username %}">My Recipes</a>
+    <a href="{% url 'recipe-create' %}">Upload Recipe</a>
     <a href="{% url 'profile' %}">Profile</a>
+    <a href="{% url 'logout' %}">Logout</a>
       </li>
 
       {% else %}
@@ -63,6 +60,7 @@
     <a href="javascript:void(0)" class="dropbtn">Categories</a>
     <div class="dropdown-content">
       <a href="{% url 'recipe-category' cat_name='Soup' %}">Soup</a>
+      <a href="{% url 'recipe-category' cat_name='Salad' %}">Salad</a>
       <a href="{% url 'recipe-category' cat_name='Starter' %}">Starter</a>
       <a href="{% url 'recipe-category' cat_name='Meal' %}">Meal</a>
       <a href="{% url 'recipe-category' cat_name='Dessert' %}">Dessert</a>
@@ -92,11 +90,12 @@
 
     {% if messages %}
       {% for message in messages %}
-          <div class="flash-msg"> <h3><strong><em>{{ message }}</em></strong></h3> </div>
+          <div class="flash-msg"> <h2><strong><em>{{ message }}</em></strong></h2> </div>
       {% endfor %}
     {% endif %}
    
    {% block main %}{% endblock %}
+
 
 
   </main>
