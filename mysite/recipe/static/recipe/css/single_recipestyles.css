@@ -111,6 +111,16 @@ footer{
   color: white;
 }
 
+.userlink a{
+  color: black;
+}
+
+.userlink a:hover{
+  color: blue ;
+}
+ 
+
+
 .recipe-changes a{
   float: left;
 }
@@ -118,7 +128,7 @@ footer{
 div.recipe-changes{
   height: 25px;
   margin-bottom: 10px;
-}
+  }
 
 
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */

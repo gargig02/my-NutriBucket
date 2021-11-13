@@ -123,7 +123,26 @@
               </p>
             </div>
           </article>
+
+          <article class="thrd-column">
+            <div>
+              <h4>Nutritional Content</h4>
+              <p>Calories per serving : {{ object.nutri_content.calories_per_serving}}</p>
+              <p>Carbs : {{ object.nutri_content.carbs}}</p>
+              <p>Protein : {{ object.nutri_content.proteins}}</p>
+              <p>Trans Fats : {{ object.nutri_content.trans_fats}}</p>
+              <p>Saturated Fats : {{ object.nutri_content.saturated_fats}}</p>
+              <p>Cholestrol : {{ object.nutri_content.cholestrol}}</p>
+            </div>
+          </article>
         </section>
+      </div>
+
+      <div class="userlink">
+        {% if object.user != NULL %}
+          <h3>Uploaded By: <a href="{% url 'user-recipe' object.user.username %}"><em>
+          {{ object.user }}</a></em></h3>
+        {% endif %}
       </div>
 
       <div class='recipe-changes'>
