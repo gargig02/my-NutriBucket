@@ -82,7 +82,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'Recipe_site',
         'USER': 'root',
-        'PASSWORD': 'MySQL_ITW2',
+        'PASSWORD': 'Shruti@236',
         'HOST': '127.0.0.1',
         'PORT': '3306',
         'OPTIONS': {
